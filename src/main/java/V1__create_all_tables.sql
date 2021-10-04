@@ -1,29 +1,32 @@
 CREATE TABLE source
 (
-    id   int primary key,
-    name varchar(255)
+    id   serial primary key,
+    name varchar(127)
 );
 
 CREATE TABLE topic
 (
-    id        int primary key,
+    id        serial primary key,
     source_id int references source (id),
-    topic     varchar(255)
-);
-
-CREATE TABLE article
-(
-    id   int primary key,
-    text varchar
+    topic     varchar(127)
 );
 
 CREATE TABLE author
 (
-    id          int primary key,
-    nickname    varchar(255),
-    first_name  varchar(255),
-    second_name varchar(255)
+    id          serial primary key,
+    nickname    varchar(127),
+    first_name  varchar(127),
+    second_name varchar(127)
 );
+
+CREATE TABLE article
+(
+    id   serial primary key,
+    topic_id int references topic (id),
+    author_id int references author (id),
+    text varchar
+);
+
 
 CREATE TABLE source_author
 (
@@ -39,14 +42,14 @@ CREATE TABLE article_author
 
 CREATE TABLE users
 (
-    id       int primary key,
-    nickname varchar(255),
+    id       serial primary key,
+    nickname varchar(127),
     admin    boolean
 );
 
 CREATE TABLE comment
 (
-    id         int primary key,
+    id         serial primary key,
     article_id int references article (id),
     user_id    int references users (id),
     text       varchar
