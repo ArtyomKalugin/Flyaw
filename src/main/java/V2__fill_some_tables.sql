@@ -1,5 +1,6 @@
 INSERT INTO source(name) VALUES ('Natural magazine');
 INSERT INTO source(name) VALUES ('Medicine');
+INSERT INTO source(name) VALUES ('Nuclear reactions');
 
 INSERT INTO topic(source_id, topic) VALUES (1, 'Nuclear reactions');
 INSERT INTO topic(source_id, topic) VALUES (2, 'Wild animals');
