@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/V1__create_all_tables.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/V2__fill_some_tables.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/V3__create_views.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/V9__froms_toy.sql" dialect="PostgreSQL" />
   </component>
 </project>

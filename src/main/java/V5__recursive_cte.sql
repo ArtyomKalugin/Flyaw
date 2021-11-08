@@ -1,7 +1,7 @@
 /* Список всех тем, на которые есть статья */
 WITH RECURSIVE t(topics) AS (
     SELECT id
-    FROM article
+    FROM topic
 
     UNION ALL
 
