@@ -8,7 +8,7 @@ CREATE TABLE source
 CREATE TABLE topic
 (
     id        serial primary key,
-    source_id int references source (id) ON DELETE CASCADE ON UPDATE CASCADE,
+    source_id int references source (id),
     topic     varchar(127) NOT NULL,
     CONSTRAINT topic_length CHECK (char_length(topic) > 1)
 );
@@ -28,8 +28,8 @@ CREATE TABLE author
 CREATE TABLE article
 (
     id   serial primary key,
-    topic_id int references topic (id) ON DELETE CASCADE ON UPDATE CASCADE,
-    author_id int references author (id) ON DELETE CASCADE ON UPDATE CASCADE,
+    topic_id int references topic (id),
+    author_id int references author (id),
     text varchar NOT NULL,
     CONSTRAINT text_length CHECK (char_length(text) > 10)
 );
@@ -37,14 +37,14 @@ CREATE TABLE article
 
 CREATE TABLE source_author
 (
-    source_id int references source (id) ON DELETE CASCADE ON UPDATE CASCADE,
-    author_id int references author (id) ON DELETE CASCADE ON UPDATE CASCADE
+    source_id int references source (id),
+    author_id int references author (id)
 );
 
 CREATE TABLE article_author
 (
-    article_id int references article (id) ON DELETE CASCADE ON UPDATE CASCADE,
-    author_id  int references author (id) ON DELETE CASCADE ON UPDATE CASCADE
+    article_id int references article (id),
+    author_id  int references author (id)
 );
 
 CREATE TABLE users
@@ -58,8 +58,8 @@ CREATE TABLE users
 CREATE TABLE comment
 (
     id         serial primary key,
-    article_id int references article (id) ON DELETE CASCADE ON UPDATE CASCADE,
-    user_id    int references users (id) ON DELETE CASCADE ON UPDATE CASCADE,
+    article_id int references article (id),
+    user_id    int references users (id),
     text       varchar NOT NULL,
     CONSTRAINT text_length CHECK (char_length(text) > 1)
 );
