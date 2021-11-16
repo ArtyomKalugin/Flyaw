@@ -24,14 +24,14 @@ SELECT c.text, x.id
 FROM comment c
 JOIN comment x ON c.user_id = c.article_id;
 
--- semi join
+-- semi join, темы, на которые есть статьи
 SELECT t.topic
 FROM topic t
 WHERE EXISTS(SELECT 1
     FROM article a
     WHERE a.topic_id = t.id);
 
--- anti join
+-- anti join, темы, на которые нет статей
 SELECT t.topic
 FROM topic t
 WHERE NOT EXISTS(SELECT 1

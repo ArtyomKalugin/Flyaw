@@ -1,0 +1,57 @@
+INSERT INTO airport(name, city) VALUES ('VKO', 'Moscow'),
+                                       ('SEA', 'Seattle'),
+                                       ('BVA', 'Paris');
+
+INSERT INTO airplane(name, airport_id) VALUES ('Boeing 737', 1),
+                                              ('Airbus A320neo', 2),
+                                              ('Comac C919', 3);
+
+INSERT INTO crew_member(first_name, second_name, profession, airplane_id) VALUES ('Artem', 'Kalugin', 'pilot', 1),
+                                                                                 ('Georgy', 'Ruzavin', 'technician', 1),
+                                                                                 ('Ivan', 'Ivanov', 'steward', 1),
+                                                                                 ('Igor', 'Kiselev', 'pilot', 2),
+                                                                                 ('Max', 'Gadelev', 'technician', 2),
+                                                                                 ('Mariya', 'Kiseleva', 'steward', 2),
+                                                                                 ('Almaz', 'Moldybaev', 'pilot', 3),
+                                                                                 ('Fanil', 'Kutlizamaev', 'technician', 3),
+                                                                                 ('Danil', 'Gerasimov', 'steward', 3);
+
+INSERT INTO flight(date, duration_hours, from_city, to_city, airplane_id, airport_id) VALUES ('15.10.2001', 10, 'Moscow', 'Paris', 1, 1),
+                                                                                 ('26.10.2001', 7, 'Moscow', 'Seattle', 1, 1),
+                                                                                 ('01.11.2002', 10, 'Seattle', 'Moscow', 2, 2),
+                                                                                 ('08.10.2002', 6, 'Seattle', 'Paris', 2, 2),
+                                                                                 ('04.12.2003', 2.5, 'Paris', 'Moscow', 3, 3),
+                                                                                 ('26.05.2004', 8, 'Paris', 'Seattle', 3, 3),
+                                                                                 ('12.03.2004', 7, 'Moscow', 'Paris', 1, 1),
+                                                                                 ('23.08.2005', 7, 'Moscow', 'Seattle', 1, 1),
+                                                                                 ('22.11.2005', 12, 'Seattle', 'Moscow', 2, 2),
+                                                                                 ('20.08.2006', 11, 'Paris', 'Seattle', 3, 3);
+
+INSERT INTO passenger(first_name, second_name, flight_id) VALUES ('Alex', 'Kuznetsov', 1),
+                                                                 ('Alex', 'Kuznetsov', 2),
+                                                                 ('Alex', 'Kuznetsov', 3),
+                                                                 ('Alex', 'Kuznetsov', 4),
+                                                                 ('Alex', 'Kuznetsov', 5),
+                                                                 ('Alex', 'Kuznetsov', 6),
+                                                                 ('Stephen', 'King', 7),
+                                                                 ('Christopher', 'Stone', 7),
+                                                                 ('James', 'Carter', 1),
+                                                                 ('Susan', 'Mills', 10),
+                                                                 ('Joseph', 'Page', 9),
+                                                                 ('John', 'McGuire', 8),
+                                                                 ('Barbara', 'Jones', 8),
+                                                                 ('Phillip', 'Conner', 5),
+                                                                 ('Brian', 'Moss', 4),
+                                                                 ('Angel', 'Smith', 3),
+                                                                 ('Nancy', 'Nelson', 10),
+                                                                 ('Rhonda', 'Gutierrez', 7),
+                                                                 ('Marilyn', 'Morgan', 8),
+                                                                 ('Patrik', 'Moore', 9),
+                                                                 ('Karen', 'Bryan', 2),
+                                                                 ('Charles', 'Woods', 3),
+                                                                 ('Keith', 'Greer', 1),
+                                                                 ('Margaret', 'Jones', 1),
+                                                                 ('Laura', 'Gomez', 4),
+                                                                 ('Donald', 'Torres', 6),
+                                                                 ('Cindy', 'Luna', 6);
+
