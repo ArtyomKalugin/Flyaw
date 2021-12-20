@@ -1,16 +1,7 @@
-CREATE MATERIALIZED VIEW check_all_author_articles AS
-    SELECT * FROM article WHERE author_id = 10;
+-- кол-во статей, написанных на какую-то тему
+CREATE MATERIALIZED VIEW check_articles_topic_count AS
+    SELECT count(*), topic_id FROM article
+        JOIN topic t on article.topic_id = t.id GROUP BY topic_id;
 
 CREATE MATERIALIZED VIEW search_article AS
     SELECT * FROM article WHERE text ILIKE '%Цель%';
-
-INSERT INTO article(topic_id, author_id, text) VALUES (10, 9, 'COMING SOON...');
-
-SELECT * FROM check_all_author_articles;
-SELECT * FROM search_article;
-
-REFRESH MATERIALIZED VIEW check_all_author_articles;
-REFRESH MATERIALIZED VIEW search_article;
-
-SELECT * FROM check_all_author_articles;
-SELECT * FROM search_article;
